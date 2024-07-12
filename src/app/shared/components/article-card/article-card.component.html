@@ -1,0 +1,10 @@
+<div class="article-card">
+  <div class="article-info">
+    <div class="articles-image" style="background-image: url({{serverStaticPath + article.image}})"></div>
+    <div class="articles-category">{{article.category}}</div>
+    <div class="articles-title">{{article.title | headShorterPipe}}</div>
+    <div class="articles-description">{{article.description |shorterPipe}}</div>
+  </div>
+  <!--  <a [routerLink]="'/articles/related/' + article.url" class="articles-more">Читать дальше</a>-->
+  <a [routerLink]="'/articles/' + article.url" class="articles-more">Читать дальше</a>
+</div>

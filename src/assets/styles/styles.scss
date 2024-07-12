@@ -1,0 +1,11 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@import "variables";
+@import "fonts";
+@import "global";
+
+body {
+  color: $blue-text-color;
+}
+

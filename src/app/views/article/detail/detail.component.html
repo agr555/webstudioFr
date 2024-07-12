@@ -1,0 +1,321 @@
+<section class="article">
+  <div class="container" *ngIf="article">
+    <div class="article-title-small-text">Блог /
+      <span class="article-title-small-text-dark" [innerHTML]="article.title"></span>
+    </div>
+    <div class="article-header">
+      <div class="article-title-big-name" [innerHTML]="article.title"></div>
+      <!--    <div class="article-title-big-description" [innerHTML]="article.description"></div>-->
+      <div class="article-title-big-description" [innerHTML]="article.description"></div>
+      <div class="articles-image-block"
+           style="background-image: url({{serverStaticPath + article.image}})">
+      </div>
+    </div>
+    <div class="article-blocks">
+      <div class="article-block-left">
+        <div class="article-content" [innerHTML]="article.text"></div>
+        <div class="article-social">
+          <div class="article-social-text"> Понравилась статья? Поделитесь ею в своих социальных сетях!</div>
+          <div class="article-social-icons">
+            <a href="https://vk.com/" class="footer-bottom-item-icon">
+              <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none"
+                   xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <clipPath id="clip17_2179">
+                    <rect id="VK" width="19.999676" height="19.999676" fill="white" fill-opacity="0"/>
+                  </clipPath>
+                </defs>
+                <rect id="VK" width="19.999676" height="19.999676" fill="#FFFFFF" fill-opacity="0"/>
+                <g clip-path="url(#clip17_2179)">
+                  <path id="Vector"
+                        d="M3.82 0.17C1.82 0.17 0.17 1.82 0.17 3.82L0.17 16.17C0.17 18.17 1.82 19.82 3.82 19.82L16.17 19.82C18.17 19.82 19.82 18.17 19.82 16.17L19.82 3.82C19.82 1.82 18.17 0.17 16.17 0.17L3.82 0.17ZM3.82 1.96L16.17 1.96C17.21 1.96 18.03 2.78 18.03 3.82L18.03 16.17C18.03 17.21 17.21 18.03 16.17 18.03L3.82 18.03C2.78 18.03 1.96 17.21 1.96 16.17L1.96 3.82C1.96 2.78 2.78 1.96 3.82 1.96ZM9.74 6.63C9.09 6.62 8.53 6.63 8.22 6.78C8.01 6.88 7.85 7.11 7.94 7.12C8.07 7.14 8.34 7.2 8.49 7.4C8.68 7.65 8.67 8.23 8.67 8.23C8.67 8.23 8.77 9.81 8.41 10.01C8.17 10.15 7.83 9.87 7.1 8.61C6.72 7.96 6.44 7.25 6.44 7.25C6.44 7.25 6.39 7.12 6.29 7.05C6.17 6.96 6.01 6.93 6.01 6.93L4.26 6.94C4.26 6.94 4 6.95 3.91 7.06C3.82 7.17 3.9 7.38 3.9 7.38C3.9 7.38 5.27 10.57 6.81 12.18C8.23 13.66 9.84 13.57 9.84 13.57L10.58 13.57C10.58 13.57 10.8 13.54 10.91 13.42C11.01 13.31 11.01 13.1 11.01 13.1C11.01 13.1 11 12.12 11.45 11.98C11.9 11.84 12.47 12.92 13.08 13.34C13.55 13.66 13.9 13.59 13.9 13.59L15.53 13.57C15.53 13.57 16.38 13.51 15.98 12.84C15.94 12.79 15.74 12.35 14.77 11.44C13.74 10.49 13.88 10.64 15.11 9C15.86 8 16.16 7.39 16.07 7.12C15.98 6.88 15.42 6.94 15.42 6.94L13.59 6.95C13.59 6.95 13.45 6.94 13.35 7C13.25 7.05 13.19 7.19 13.19 7.19C13.19 7.19 12.9 7.97 12.51 8.63C11.69 10.02 11.36 10.09 11.23 10C10.92 9.8 11 9.2 11 8.77C11 7.42 11.2 6.86 10.6 6.71C10.4 6.66 10.25 6.63 9.74 6.63Z"
+                        fill="#709FDC" fill-opacity="1.000000" fill-rule="nonzero"/>
+                </g>
+              </svg>
+            </a>
+            <a href="https://instagram.com" class="footer-bottom-item-icon">
+              <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none"
+                   xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <clipPath id="clip17_2175">
+                    <rect id="Facebook" width="20.000204" height="20.000000" transform="translate(-0.667725 0.000000)"
+                          fill="white" fill-opacity="0"/>
+                  </clipPath>
+                </defs>
+                <rect id="Facebook" width="20.000204" height="20.000000" transform="translate(-0.667725 0.000000)"
+                      fill="#FFFFFF" fill-opacity="0"/>
+                <g clip-path="url(#clip17_2175)">
+                  <path id="Vector"
+                        d="M9.33 0C3.81 0 -0.67 4.48 -0.67 10C-0.67 15.51 3.81 20 9.33 20C14.84 20 19.33 15.51 19.33 10C19.33 4.48 14.84 0 9.33 0ZM9.33 1.66C13.94 1.66 17.66 5.38 17.66 10C17.66 14.18 14.59 17.63 10.57 18.23L10.57 12.43L12.94 12.43L13.31 10.01L10.57 10.01L10.57 8.7C10.57 7.7 10.9 6.81 11.83 6.81L13.34 6.81L13.34 4.71C13.07 4.67 12.51 4.59 11.46 4.59C9.25 4.59 7.96 5.76 7.96 8.41L7.96 10.01L5.69 10.01L5.69 12.43L7.96 12.43L7.96 18.21C4 17.55 0.99 14.14 0.99 10C0.99 5.38 4.71 1.66 9.33 1.66Z"
+                        fill="#709FDC" fill-opacity="1.000000" fill-rule="nonzero"/>
+                </g>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="footer-bottom-item-icon">
+              <svg width="20.000000" height="20.000000" viewBox="0 0 20 20" fill="none"
+                   xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                  <clipPath id="clip17_2177">
+                    <rect id="Instagram" width="19.999676" height="19.999676" transform="translate(-0.334229 0.000000)"
+                          fill="white" fill-opacity="0"/>
+                  </clipPath>
+                </defs>
+                <rect id="Instagram" width="19.999676" height="19.999676" transform="translate(-0.334229 0.000000)"
+                      fill="#FFFFFF" fill-opacity="0"/>
+                <g clip-path="url(#clip17_2177)">
+                  <path id="Vector"
+                        d="M5.62 0.17C2.44 0.17 -0.16 2.78 -0.16 5.95L-0.16 14.04C-0.16 17.21 2.44 19.82 5.62 19.82L13.71 19.82C16.88 19.82 19.48 17.21 19.48 14.04L19.48 5.95C19.48 2.78 16.88 0.17 13.71 0.17L5.62 0.17ZM5.62 1.96L13.71 1.96C15.91 1.96 17.7 3.74 17.7 5.95L17.7 14.04C17.7 16.25 15.91 18.03 13.71 18.03L5.62 18.03C3.41 18.03 1.63 16.25 1.63 14.04L1.63 5.95C1.63 3.74 3.41 1.96 5.62 1.96ZM14.93 3.91C14.48 3.91 14.12 4.27 14.12 4.72C14.12 5.17 14.48 5.53 14.93 5.53C15.38 5.53 15.74 5.17 15.74 4.72C15.74 4.27 15.38 3.91 14.93 3.91ZM9.66 4.64C6.71 4.64 4.3 7.05 4.3 9.99C4.3 12.94 6.71 15.35 9.66 15.35C12.61 15.35 15.02 12.94 15.02 9.99C15.02 7.05 12.61 4.64 9.66 4.64ZM9.66 6.42C11.65 6.42 13.23 8.01 13.23 9.99C13.23 11.98 11.65 13.57 9.66 13.57C7.68 13.57 6.09 11.98 6.09 9.99C6.09 8.01 7.68 6.42 9.66 6.42Z"
+                        fill="#709FDC" fill-opacity="1.000000" fill-rule="nonzero"/>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="comments">
+          <div class="comment-title">Комментарии к статье</div>
+
+          <div class="comments-null" *ngIf="!article.commentsCount && isLogged">
+            Будьте первым, кто оставит свой комментарий к статье!
+          </div>
+
+          <div class="data-form" *ngIf="isLogged" [formGroup]="commentForm">
+            <div class="comment-input-item1" *ngIf="isLogged">
+              <textarea type="text" class="comment-input-item" placeholder="Напишите Ваш комментарий к статье..."
+                        [ngStyle]="{'border-color': commentForm.get('text')?.invalid
+                   && (commentForm.get('text')?.dirty || commentForm.get('text')?.touched) ? 'red' : ''}"
+                        formControlName="text">
+              </textarea>
+              <button class="button" (click)="addComment()"> Опубликовать комментарий</button>
+            </div>
+          </div>
+
+          <div class="comment-info" *ngIf="!isLogged">Чтобы оставлять комментарии,
+            <a routerLink="/login">войдите </a> или
+            <a routerLink="/signup">зарегистрируйтесь.</a>
+          </div>
+
+          <div class="comments-items-more" *ngIf="!showMore">
+            <div class="comments-items" *ngFor="let comment of article.comments">
+              <div class="comment-item">
+                <div class="comment-item-user-block">
+                  <div class="comment-image"
+                       style="background-image: url('/assets/images/pages/userForComment.png')"></div>
+                  <div class="comment-item-user">
+                    <div class="comment-item-name">{{comment.user!.name}}</div>
+                    <div class="comment-item-date">{{comment.date}}</div>
+                  </div>
+                </div>
+                <div class="comment-item-text"> {{comment.text}}          </div>
+
+                <div class="comment-item-likes-block">
+                  <div class="comment-item-likes-count"
+                       style="{{comment.myLike?'color: #709FDC' : 'color: #071739'}}">{{comment.likesCount}}</div>
+                  <div class="comment-item-likes-image" *ngIf="!comment.myLike"
+                       (click)="addAction(comment!.id!, 'like')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M7.47 18.35L10.58 20.75C10.98 21.15 11.88 21.35 12.48 21.35L16.28 21.35C17.48 21.35 18.78 20.45 19.08 19.25L21.48 11.95C21.98 10.54 21.08 9.34 19.58 9.34L15.58 9.34C14.98 9.34 14.48 8.84 14.58 8.15L15.08 4.94C15.28 4.04 14.67 3.04 13.78 2.75C12.98 2.44 11.98 2.84 11.58 3.44L7.47 9.54"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M2.37 8.54C2.37 7.14 2.97 6.64 4.37 6.64L5.37 6.64C6.77 6.64 7.37 7.14 7.37 8.54L7.37 18.34C7.37 19.74 6.77 20.24 5.37 20.24L4.37 20.24C2.97 20.24 2.37 19.74 2.37 18.34L2.37 8.54Z"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-image" *ngIf="comment.myLike"
+                       (click)="addAction(comment!.id!, 'like')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M7.47 18.35L10.58 20.75C10.98 21.15 11.88 21.35 12.48 21.35L16.28 21.35C17.48 21.35 18.78 20.45 19.08 19.25L21.48 11.95C21.98 10.54 21.08 9.34 19.58 9.34L15.58 9.34C14.98 9.34 14.48 8.84 14.58 8.15L15.08 4.94C15.28 4.04 14.67 3.04 13.78 2.75C12.98 2.44 11.98 2.84 11.58 3.44L7.47 9.54"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M2.37 8.54C2.37 7.14 2.97 6.64 4.37 6.64L5.37 6.64C6.77 6.64 7.37 7.14 7.37 8.54L7.37 18.34C7.37 19.74 6.77 20.24 5.37 20.24L4.37 20.24C2.97 20.24 2.37 19.74 2.37 18.34L2.37 8.54Z"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-count"
+                       style="{{comment.myDislike?'color: #709FDC' : 'color: #071739'}}">{{comment.dislikesCount}}</div>
+                  <!--        <div class="my-voice"
+                               style="{{comment.myDislike?'color:red':''}}">{{comment.id}} {{comment.myDislike}}</div>-->
+                  <div class="comment-item-likes-image" *ngIf="!comment.myDislike"
+                       style="{{comment.myDislike?'stroke: #709FDC':''}}"
+                       (click)="addAction(comment!.id!, 'dislike')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M16.51 5.64L13.41 3.24C13.01 2.84 12.11 2.64 11.51 2.64L7.71 2.64C6.51 2.64 5.21 3.54 4.91 4.74L2.51 12.04C2.01 13.45 2.91 14.64 4.41 14.64L8.41 14.64C9.01 14.64 9.51 15.14 9.41 15.84L8.91 19.04C8.71 19.95 9.31 20.95 10.21 21.24C11.01 21.54 12.01 21.14 12.41 20.54L16.51 14.45"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M21.62 15.45C21.62 16.85 21.02 17.35 19.62 17.35L18.62 17.35C17.22 17.35 16.62 16.85 16.62 15.45L16.62 5.65C16.62 4.25 17.22 3.75 18.62 3.75L19.62 3.75C21.02 3.75 21.62 4.25 21.62 5.65L21.62 15.45Z"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-image" *ngIf="comment.myDislike"
+                       (click)="addAction(comment!.id!, 'dislike')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M16.51 5.64L13.41 3.24C13.01 2.84 12.11 2.64 11.51 2.64L7.71 2.64C6.51 2.64 5.21 3.54 4.91 4.74L2.51 12.04C2.01 13.45 2.91 14.64 4.41 14.64L8.41 14.64C9.01 14.64 9.51 15.14 9.41 15.84L8.91 19.04C8.71 19.95 9.31 20.95 10.21 21.24C11.01 21.54 12.01 21.14 12.41 20.54L16.51 14.45"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M21.62 15.45C21.62 16.85 21.02 17.35 19.62 17.35L18.62 17.35C17.22 17.35 16.62 16.85 16.62 15.45L16.62 5.65C16.62 4.25 17.22 3.75 18.62 3.75L19.62 3.75C21.02 3.75 21.62 4.25 21.62 5.65L21.62 15.45Z"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-image" (click)="addAction(comment!.id!, 'violate')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12Z"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <path id="Vector" d="M12 8L12 13" stroke="#071739" stroke-opacity="1.000000"
+                            stroke-width="1.500000"
+                            stroke-linejoin="round" stroke-linecap="round"/>
+                      <path id="Vector" d="M11.99 16L12 16" stroke="#709FDC" stroke-opacity="1.000000"
+                            stroke-width="1.500000"
+                            stroke-linejoin="round" stroke-linecap="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--          -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+          <div class="comments-items-more" *ngIf="showMore">
+            <div class="comments-items" *ngFor="let comment of commentsNext.comments">
+              <div class="comment-item">
+                <div class="comment-item-user-block">
+                  <div class="comment-image"
+                       style="background-image: url('/assets/images/pages/userForComment.png')"></div>
+                  <div class="comment-item-user">
+                    <div class="comment-item-name">{{comment.user!.name}}</div>
+                    <div class="comment-item-date">{{comment.date}}</div>
+                  </div>
+                </div>
+                <div class="comment-item-text"> {{comment.text}}          </div>
+
+                <div class="comment-item-likes-block">
+                  <div class="comment-item-likes-count"
+                       style="{{comment.myLike?'color: #709FDC' : 'color: #071739'}}">{{comment.likesCount}}</div>
+                  <div class="comment-item-likes-image" *ngIf="!comment.myLike" (click)="addAction(comment.id, 'like')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M7.47 18.35L10.58 20.75C10.98 21.15 11.88 21.35 12.48 21.35L16.28 21.35C17.48 21.35 18.78 20.45 19.08 19.25L21.48 11.95C21.98 10.54 21.08 9.34 19.58 9.34L15.58 9.34C14.98 9.34 14.48 8.84 14.58 8.15L15.08 4.94C15.28 4.04 14.67 3.04 13.78 2.75C12.98 2.44 11.98 2.84 11.58 3.44L7.47 9.54"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M2.37 8.54C2.37 7.14 2.97 6.64 4.37 6.64L5.37 6.64C6.77 6.64 7.37 7.14 7.37 8.54L7.37 18.34C7.37 19.74 6.77 20.24 5.37 20.24L4.37 20.24C2.97 20.24 2.37 19.74 2.37 18.34L2.37 8.54Z"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-image" *ngIf="comment.myLike" (click)="addAction(comment.id, 'like')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M7.47 18.35L10.58 20.75C10.98 21.15 11.88 21.35 12.48 21.35L16.28 21.35C17.48 21.35 18.78 20.45 19.08 19.25L21.48 11.95C21.98 10.54 21.08 9.34 19.58 9.34L15.58 9.34C14.98 9.34 14.48 8.84 14.58 8.15L15.08 4.94C15.28 4.04 14.67 3.04 13.78 2.75C12.98 2.44 11.98 2.84 11.58 3.44L7.47 9.54"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M2.37 8.54C2.37 7.14 2.97 6.64 4.37 6.64L5.37 6.64C6.77 6.64 7.37 7.14 7.37 8.54L7.37 18.34C7.37 19.74 6.77 20.24 5.37 20.24L4.37 20.24C2.97 20.24 2.37 19.74 2.37 18.34L2.37 8.54Z"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-count"
+                       style="{{comment.myDislike?'color: #709FDC' : 'color: #071739'}}">{{comment.dislikesCount}}</div>
+                  <!--                  <div class="my-voice" style="{{comment.myDislike?'color: red':''}}">{{comment.id}} </div>-->
+                  <!--                <div class="comment-item-likes-image" style="{{comment.myDislike?'stroke: red':''}}" (click)="addAction(comment.id, 'dislike')">-->
+                  <div class="comment-item-likes-image" *ngIf="!comment.myDislike"
+                       (click)="addAction(comment.id, 'dislike')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M16.51 5.64L13.41 3.24C13.01 2.84 12.11 2.64 11.51 2.64L7.71 2.64C6.51 2.64 5.21 3.54 4.91 4.74L2.51 12.04C2.01 13.45 2.91 14.64 4.41 14.64L8.41 14.64C9.01 14.64 9.51 15.14 9.41 15.84L8.91 19.04C8.71 19.95 9.31 20.95 10.21 21.24C11.01 21.54 12.01 21.14 12.41 20.54L16.51 14.45"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M21.62 15.45C21.62 16.85 21.02 17.35 19.62 17.35L18.62 17.35C17.22 17.35 16.62 16.85 16.62 15.45L16.62 5.65C16.62 4.25 17.22 3.75 18.62 3.75L19.62 3.75C21.02 3.75 21.62 4.25 21.62 5.65L21.62 15.45Z"
+                            stroke="#071739" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-image" *ngIf="comment.myDislike"
+                       (click)="addAction(comment.id, 'dislike')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M16.51 5.64L13.41 3.24C13.01 2.84 12.11 2.64 11.51 2.64L7.71 2.64C6.51 2.64 5.21 3.54 4.91 4.74L2.51 12.04C2.01 13.45 2.91 14.64 4.41 14.64L8.41 14.64C9.01 14.64 9.51 15.14 9.41 15.84L8.91 19.04C8.71 19.95 9.31 20.95 10.21 21.24C11.01 21.54 12.01 21.14 12.41 20.54L16.51 14.45"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000"/>
+                      <path id="Vector"
+                            d="M21.62 15.45C21.62 16.85 21.02 17.35 19.62 17.35L18.62 17.35C17.22 17.35 16.62 16.85 16.62 15.45L16.62 5.65C16.62 4.25 17.22 3.75 18.62 3.75L19.62 3.75C21.02 3.75 21.62 4.25 21.62 5.65L21.62 15.45Z"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+                  </div>
+                  <div class="comment-item-likes-image" (click)="addAction(comment.id, 'violate')">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12Z"
+                            stroke="#709FDC" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+                      <path id="Vector" d="M12 8L12 13" stroke="#071739" stroke-opacity="1.000000"
+                            stroke-width="1.500000"
+                            stroke-linejoin="round" stroke-linecap="round"/>
+                      <path id="Vector" d="M11.99 16L12 16" stroke="#709FDC" stroke-opacity="1.000000"
+                            stroke-width="1.500000"
+                            stroke-linejoin="round" stroke-linecap="round"/>
+                      <g opacity="0.000000"/>
+                    </svg>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="comments-more" *ngIf="article?.commentsCount && !cursorMoreOff">
+            <!--            <div class="comment-more-text" *ngIf="article.commentsCount" (click)="getComments()">-->
+            <div class="comment-more-text" [class.disabled]="cursorMoreOff" (click)="getComments()">
+              Загрузить ещё комментарии
+            </div>
+            <div class="comment-more-arrow">
+              <svg width="15.000000" height="7.000000" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs/>
+                <path id="Vector"
+                      d="M7 7C6.41 7 5.83 6.77 5.39 6.33L-0.05 0.9C-0.29 0.65 -0.29 0.25 -0.05 0.01C0.2 -0.23 0.59 -0.23 0.84 0.01L6.27 5.45C6.67 5.84 7.32 5.84 7.72 5.45L13.15 0.01C13.4 -0.23 13.8 -0.23 14.04 0.01C14.28 0.25 14.28 0.65 14.04 0.9L8.6 6.33C8.16 6.77 7.58 7 7 7Z"
+                      fill="#709FDC" fill-opacity="1.000000" fill-rule="nonzero"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="related-card-items">
+        <article-card *ngFor="let article of articleRel" [article]="article"></article-card>
+      </div>
+    </div>
+  </div>
+</section>
+

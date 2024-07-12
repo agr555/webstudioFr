@@ -1,0 +1,18 @@
+<div class="filter-categories">
+  <input type="checkbox" #input
+         [checked]="activeParams.categories.includes(category.url)"
+         (change)="updateFilterParam(category.url, input.checked)"
+         class="filter-categories-input" [id]="'input' + index">
+  <label class="filter-categories-label" [for]="'input' + index">
+    <span class="filter-categories-name" [class.active]="active">{{category.name}}</span>
+    <a>
+      <svg *ngIf="!active" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.12 4.904H6.656V0.511999H5.144V4.904H0.68V6.32H5.144V10.688H6.656V6.32H11.12V4.904Z"
+              fill="#BEBEBE"/>
+      </svg>
+      <svg *ngIf="active" width="7" height="3" viewBox="0 0 7 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.44 2.24H6.728V0.752H0.44V2.24Z" fill="#071739"/>
+      </svg>
+    </a>
+  </label>
+</div>

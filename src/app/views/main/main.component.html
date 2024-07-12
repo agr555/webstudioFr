@@ -1,0 +1,402 @@
+<section class="main-slider">
+  <div class="container">
+    <div class="info-items">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="info-item slider-image-1">
+            <div class="info-item-ellipse"></div>
+            <div class="info-slider-text">
+              <div class="info-item-sub-title">Предложение месяца</div>
+              <div class="info-item-title">Продвижение в Instagram для вашего бизнеса <span>-15%!</span></div>
+              <button class="button" (click)="more('Таргет')">Подробнее</button>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="info-item slider-image-2">
+            <div class="info-item-ellipse"></div>
+            <div class="info-slider-text">
+              <div class="info-item-sub-title">Акция</div>
+              <div class="info-item-title">Нужен грамотный <span>копирайтер?</span></div>
+              <div class="info-text">Весь декабрь у нас действует акция на работу копирайтера.</div>
+              <button class="button" (click)="more('Копирайтинг')">Подробнее</button>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="info-item slider-image-3">
+            <div class="info-item-ellipse"></div>
+            <div class="info-slider-text">
+              <div class="info-item-sub-title">Новость дня</div>
+              <div class="info-item-title">6 место <span>в ТОП-10 SMM-агенств Москвы!</span></div>
+              <div class="info-text">Мы благодарим каждого, кто голосовал за нас!</div>
+              <button class="button" (click)="more('SMM')">Подробнее</button>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</section>
+
+<section class="main-services" id="services">
+  <div class="container">
+    <div class="main-services-title">Услуги, которые мы предлагаем</div>
+    <div class="main-service-card-items">
+      <div class="main-service-card" [class.is-light]="isLight" (click)="navigate()">
+        <!--      <div class="main-service-card-image" style="background-image: url({{serverStaticPath + product.image}})"></div>-->
+        <div class="main-service-card-about">
+          <div class="main-service-card-image"
+               style="background-image: url('/assets/images/pages/main/service1.png')">&nbsp;
+          </div>
+          <div class="main-service-card-name">Создание сайтов <!--        {{product.name}}-->
+          </div>
+          <div class="main-service-card-text">В краткие сроки мы создадим качественный и самое главное продающий сайт
+            для продвижения Вашего бизнеса!
+          </div>
+        </div>
+
+        <div class="main-service-card-info" *ngIf="!isLight">
+          <div class="main-service-card-price">От 7 500₽</div>
+          <!--        <div class="main-service-card-action">-->
+          <!--          <button class="button" (click)="addToCart()" *ngIf="!countInCart">В корзину</button>-->
+          <button class="button" (click)="more('Дизайн')"> Подробнее</button>
+          <!--        </div>-->
+        </div>
+      </div>
+      <div class="main-service-card" [class.is-light]="isLight" (click)="navigate()">
+        <!--      <div class="main-service-card-image" style="background-image: url({{serverStaticPath + product.image}})"></div>-->
+        <div class="main-service-card-about">
+          <div class="main-service-card-image"
+               style="background-image: url('/assets/images/pages/main/service2.png')">&nbsp;
+          </div>
+          <div class="main-service-card-name">Продвижение <!--        {{product.name}}-->
+          </div>
+          <div class="main-service-card-text">Вам нужен качественный SMM-специалист или грамотный таргетолог? Мы готовы
+            оказать Вам услугу “Продвижения” на наивысшем уровне!
+          </div>
+        </div>
+        <div class="main-service-card-info" *ngIf="!isLight">
+          <div class="main-service-card-price">От 3 500₽</div>
+          <!--        <div class="main-service-card-action">-->
+          <!--          <button class="button" (click)="addToCart()" *ngIf="!countInCart">В корзину</button>-->
+          <button class="button" (click)="more('Таргет')"> Подробнее</button>
+          <!--        </div>-->
+        </div>
+      </div>
+      <div class="main-service-card" [class.is-light]="isLight" (click)="navigate()">
+        <!--      <div class="main-service-card-image" style="background-image: url({{serverStaticPath + product.image}})"></div>-->
+        <div class="main-service-card-about">
+          <div class="main-service-card-image"
+               style="background-image: url('/assets/images/pages/main/service3.png')">&nbsp;
+          </div>
+          <div class="main-service-card-name">Реклама <!--        {{product.name}}-->
+          </div>
+          <div class="main-service-card-text">Без рекламы не может обойтись ни один бизнес или специалист. Обращаясь к
+            нам, мы гарантируем быстрый прирост клиентов за счёт правильно настроенной рекламы.
+          </div>
+        </div>
+        <div class="main-service-card-info" *ngIf="!isLight">
+          <div class="main-service-card-price">От 1 000₽</div>
+          <!--        <div class="main-service-card-action">-->
+          <!--          <button class="button" (click)="addToCart()" *ngIf="!countInCart">В корзину</button>-->
+          <button class="button" (click)="more('')"> Подробнее</button>
+          <!--        </div>-->
+        </div>
+      </div>
+      <div class="main-service-card" [class.is-light]="isLight" (click)="navigate()">
+        <!--      <div class="main-service-card-image" style="background-image: url({{serverStaticPath + product.image}})"></div>-->
+        <div class="main-service-card-about">
+          <div class="main-service-card-image"
+               style="background-image: url('/assets/images/pages/main/service4.png')">&nbsp;
+          </div>
+          <div class="main-service-card-name">Копирайтинг <!--        {{product.name}}-->
+          </div>
+          <div class="main-service-card-text">Наши копирайтеры готовы написать Вам любые продающие текста, которые не
+            только обеспечат рост охватов, но и помогут выйти на новый уровень в продажах.
+          </div>
+        </div>
+        <div class="main-service-card-info" *ngIf="!isLight">
+          <div class="main-service-card-price">От 750₽</div>
+          <!--        <div class="main-service-card-action">-->
+          <!--          <button class="button" (click)="addToCart()" *ngIf="!countInCart">В корзину</button>-->
+          <button class="button" (click)="more('Копирайтинг')"> Подробнее</button>
+          <!--        </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-image" style="background-image: url('/assets/images/pages/main/about-image.png')">
+      &nbsp;
+    </div>
+
+    <div class="about-info">
+      <div class="about-title">Кто мы и чем мы занимаемся?</div>
+      <div class="about-text"><span>АйтиШторм —</span> это ваш помощник №1 при решении таких вопросов, как продвижение в
+        сети, разработка сайтов для бизнеса и личного бренда, сторисмейкинг, копирайтинг, маркетинг, разработка
+        визуальной концепции и создание инфопродуктов. Компания была основана в 2019 году и за всё это время смогла
+        выйти в ТОП-10 агенств, предлагающих услуги продвижения в сети.
+      </div>
+      <div class="advantages">
+        <div class="advantages-title">Наши преимущества</div>
+        <div class="advantages-items">
+          <div class="advantage-item">
+            <div class="advantage-number">
+              <div class="advantage-number-text">1</div>
+            </div>
+            <div class="advantage-item-description">
+              <span>Мастерски вовлекаем аудиториюв процесс. </span>Мы увеличиваем процент вовлечённости за короткий
+              промежуток времени.
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-number">
+              <div class="advantage-number-text">2</div>
+            </div>
+            <div class="advantage-item-description">
+              <span>Разрабатываем бомбическую визуальную концепцию. </span> Наши специалисты знают как создать
+              уникальный образ вашего проекта.
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-number active">
+              <div class="advantage-number-text">3</div>
+            </div>
+            <div class="advantage-item-description">
+              <span>Создаём мощные воронки с помощью текстов. </span> Наши копирайтеры создают не только вкусные текста,
+              но и классные воронки.
+            </div>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-number active">
+              <div class="advantage-number-text">4</div>
+            </div>
+            <div class="advantage-item-description">
+              <span>Помогаем продавать больше.  </span> Мы не только помогаем разработать стратегию по продажам, но
+              также корректируем её под нужды заказчика.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section *ngIf="articles.length>0" class="pop-articles">
+  <div class="container">
+    <div class="pop-articles-title" >Популярные статьи из блога</div>
+    <div class="pop-articles-items">
+      <owl-carousel-o [options]="customOptions" #ownCar>
+        <ng-template carouselSlide *ngFor="let article of articles">
+          <article-card [article]="article"></article-card>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+
+
+</section>
+
+
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="review-title">Отзывы о нашей работе</div>
+    <div class="review-carousel">
+      <owl-carousel-o [options]="customOptionsReview" #ownCarReview>
+        <ng-template carouselSlide *ngFor="let review of reviews">
+          <div class="review-item">
+            <div class="review-item-head">
+              <div class="review-item-image"
+                   style="background-image: url('/assets/images/review/{{review.image}}')"></div>
+              <div class="review-item-name">{{review.name}}</div>
+            </div>
+            <div class="review-item-text">{{review.text}}</div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+      <div class="review-arrows">
+        <a class="move-backward" (click)="ownCarReview.prev()">
+          <!--          <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <defs/>
+                      <path id="Vector"
+                            d="M10.55 15C10.4 15 10.24 14.94 10.12 14.82L4.81 9.55C3.94 8.7 3.94 7.29 4.81 6.44L10.12 1.17C10.35 0.94 10.75 0.94 10.98 1.17C11.22 1.4 11.22 1.79 10.98 2.03L5.67 7.29C5.28 7.68 5.28 8.31 5.67 8.7L10.98 13.96C11.22 14.2 11.22 14.58 10.98 14.82C10.86 14.93 10.7 15 10.55 15Z"
+                            fill="#202B21" fill-opacity="1.000000" fill-rule="nonzero"/>
+                      <g opacity="0.000000"/>
+                    </svg>-->
+          <svg width="10.000000" height="19.000000" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <pattern id="pattern_40_5540" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+                <use xlink:href="#image40_554_0" transform="matrix(0.002841,0,0,0.005303,0,-0.009091)"/>
+              </pattern>
+              <image id="image40_554_0" width="352.000000" height="192.000000"
+                     xlink:href="data:image/png;base64,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"/>
+            </defs>
+            <rect id="Previous" x="10.000000" width="18.666666" height="10.000000"
+                  transform="rotate(90 10.000000 0.000000)" fill="url(#pattern_40_5540)" fill-opacity="1.000000"/>
+          </svg>
+
+        </a>
+        <a class="move-forward" (click)="ownCarReview.next()">
+          <svg width="10.000000" height="18.000000" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <pattern id="pattern_40_5530" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+                <use xlink:href="#image40_553_0" transform="matrix(0.002841,0,0,0.005303,0,-0.009091)"/>
+              </pattern>
+              <image id="image40_553_0" width="352.000000" height="192.000000"
+                     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWAAAADACAYAAAA6CrkWAAAABHNCSVQICAgIfAhkiAAACs5JREFUeJzt3U2MVWcdx/Hfc6a0lNqE4II2jQuVIZFqqCRGYzdlgVp1YUx008QCdiVJHViwVNSVaJgxRFaFSePLwhgTo7FabHXhzqRvatsUhi5MU9iQmsDUmTr3cTHc6TBz79xzz33en+9n0xbKvec+5///pjlMGaOWTp5//d5ls+3Lkn1ERh+TtFsyD6z+rH1L0jVZvWaM/rK0uPT7c8cevNH2tQEgZb76Z0b9C0/OL0w3xp6U1WOS7m55ve8a6eda0enZJ/ZcbvlrACApvvs3NMCn5t/c/h+tfN9KM5K2jXHN6y3Lam6nmfruqSMf/m/H1wCAoEL1b2CAjz91eY+d0m8kfaLjG2/0yoqxXz17eHrB0esBgBch+7cpwCfOX9nfa3p/krTb0Zv3XWsa++iZx6dfdPy6AODEiacvfbLXM8/IR/96zefPfPMjL6//wdsCfKv8f/Pw5rfY67I6NHd0+gU/rw8A3cxcuHRARhcls8vTW1wztvfZ2aN7r/R/oOn/zan5N7fbKftreYuvJJldMua5b88vfMrfewDAeGbm33hIxjzrMb6StNs2zW+P/+rfa7+Ztxbgd8zKDySz3+Ob9+006v1x5sKlAwHeCwC2tNoi85ykD3p/M6uP2xtLp/r/aCTpxNMLe3s9+091/92+LlfC4wgAUQV47DDI8oqx+84enl5oJMn2dFJB4yvxOAJATIEeOwxy51TPnJQkc/L86/cuN3dclbQj8EX0vWNlPveTIx/9e6T3B1CZmfk3HpKaPyvEY4fBFpcXl3Y3q/97XbT4SjwTBhBQ0Ge+w+246547v9hI9pGIF3GL2SWji0QYgE+RnvkO1LPmYKNG+2JfyCqeCQPwJ+Iz34GMzL5GVvfHvpB1dhrZZ4kwAJcSeOY7gL2vkcx9sS9jAyIMwJk04ytJur+RsTb2VQxAhAFMLOH4SpJtZPV27KsYgggD6Czx+ErS242kq7GvYgtEGMDYMoivJF1tJL0a+ypG4OuEAbSWyNf5jmSl1xoj/TX2hYzG1wkDGC2lr/MdzT7fTE3d/J1kbsa+lNH4OmEAw6X2db4jLL63uPxM8+Nv7L9pZH8Z+2pa4pkwgE0yeea73s/OHXvwxuqfB7yi05KW415PazwTBrAml2e+6ywb2zst3foD2Wef2HNZVnNxr2kcPBMGkNsz31VGdrb/bYnWviPGyg37HWuV0TfM5JkwULPMnvn2/UP3bP9e/x/WAnz2yemlXmO/JulalMvqhscRQIUyfOwgK101tveV2a9/6N3+jzXr/4XV71vf+4Jkr4e/vK54HAHUJMfHDpK9btR7dP13RJY2fFv6vgx/R1HiO2sAxSutTQMDLJX3QQHkrcQmDQ2wVOYHBpCfUlu0ZYClcj84gDyU3KCRAZbKPgAA6Sq9Pa0CLJV/EADSUkNzWgdYquNAAMRXS2vGCrBUz8EAiKOmxowdYKmuAwIQTm1t6RRgqb6DAuBXjU3pHGCpzgMD4F6tLZkowFK9BwfAjZobMnGApboPEEB3tbfDSYAlDhLAeGiGwwBLHCiAdmjFKqcBljhYAFujEe9zHmCJAwYwGG24nZcASxw0gNvRhM28BVjiwAGsogWDeQ2wxMEDtaMBw3kPsMQNAGrF7m8tSIAlbgRQG3Z+tGABlrghQC3Y9XaCBljixgClY8fbCx5giRsElIrdHk+UAEvcKKA07PT4ogVY4oYBpWCXu4kaYIkbB+SOHe4ueoAlbiCQK3Z3MkkEWOJGArlhZyeXTIAlbiiQC3bVjaQCLHFjgdSxo+4kF2CJGwykit10K8kAS9xoIDXspHvJBljihgOpYBf9SDrAEjceiI0d9Cf5AEsMABALu+dXFgGWGAQgNHbOv2wCLDEQQCjsWhhZBVhiMADf2LFwsguwxIAAvrBbYWUZYIlBAVxjp8LLNsASAwO4wi7FkXWAJQYHmBQ7FE/2AZYYIKArdieuIgIsMUjAuNiZ+IoJsMRAAW2xK2koKsASgwWMwo6ko7gASwwYMAy7kZYiAywxaMBG7ER6ig2wxMABfexCmooOsMTgAexAuooPsMQAol7MftqqCLDEIKI+zHz6qgmwxECiHsx6HqoKsMRgonzMeD6qC7DEgKJczHZeqgywxKCiPMx0fqoNsMTAohzMcp6qDrDE4CJ/zHC+qg+wxAAjX8xu3gjwLQwycsPM5o8Ar8NAIxfMahkI8AYMNlLHjJaDAA/AgCNVzGZZCPAQDDpSw0yWhwBvgYFHKpjFMhHgERh8xMYMlosAt8ACIBZmr2wEuCUWAaExc+UjwGNgIRAKs1YHAjwmFgO+MWP1IMAdsCDwhdmqCwHuiEWBa8xUfQjwBFgYuMIs1YkAT4jFwaSYoXoRYAdYIHTF7NSNADvCImFczAwIsEMsFNpiViARYOdYLIzCjKCPAHvAgmEYZgPrEWBPWDRsxExgIwLsEQuHPmYBgxBgz1g8MAMYhgAHwALWi3uPrRDgQFjE+nDPMQoBDoiFrAf3Gm0Q4MBYzPJxj9EWAY6ABS0X9xbjIMCRsKjl4Z5iXAQ4Iha2HNxLdEGAI2Nx88c9RFcEOAEscL64d5gEAU4Ei5wf7hkmRYATwkLng3sFFwhwYljs9HGP4AoBThALni7uDVwiwIli0dPDPYFrBDhhLHw6uBfwgQAnjsWPj3sAXwhwBghAPJw9fCLAmSAE4XHm8I0AZ4QghMNZIwQCnBnC4B9njFAIcIYIhD+cLUIiwJkiFO5xpgiNAGeMYLjDWSIGApw5wjE5zhCxEOACEJDuODvERIALQUjGx5khNgJcEILSHmeFFBDgwhCW0TgjpIIAF4jADMfZICUEuFCEZjPOBKkhwAUjOO/jLJAiAlw4wsMZIF0EuAI1B6jmz470EeBK1BiiGj8z8kKAK1JTkGr6rMgXAa5MDWGq4TOiDAS4QiUHquTPhvIQ4EqVGKoSPxPKRoArVlKwSvosqAcBrlwJ4SrhM6BOBBhZB8xo5b1cr534ggBDkjRz4dIBGV2UzK7Y19Kevb7618yu2erQ3NHpF2JfCeIjwFiT6X8J54T/8sVtCDBuQ4S9Ib7YhABjEyLsHPHFQAQYAxFhZ4gvhiLAGIoIT4z4YksEGFsiwp0RX4xEgDESER4b8UUrBBitEOHWiC9aI8BojQiPRHwxFgKMsRDhoYgvxkaAMTYivAnxRScEGJ0Q4TXEF50RYHRGhIkvJkOAMZGKI0x8MTECjIlVGGHiCycIMJyoKMLEF84QYDhTQYSJL5wiwHCq4AgTXzhHgOFcgREmvvCCAMOLgiJMfOENAYY3BUSY+MIrAgyvMo4w8YV3BBjeZRhh4osgCDCCyCjCxBfBEGAEk0GEiS+CIsAIKuEIE18ER4ARXIIRJr6IggAjioQiTHwRDQFGNAlEmPgiKgKMqCJGmPgiOgKM6CJEmPgiCQQYSQgYYeKLZBBgJCNAhIkvktLEvgCgb+7I3peaxh6SdM31a1vpqtQ7SHyREgKMpJx5fPrFFWMflvSKu1e1Lze29/Dckb0vuXtNYHIEGMk5e3h6YaemPm2kH0lanuCllmV1eqfu+Mzs0b1XXF0f4ArPgJG0409d3qMpnbTSY5J2tPxli0b6xf+M/eHZw9MLPq8PmAQBRha+9dN/fWDb3Xd9yRgdlLRP0m7JPLD6s/YtrT43ftUY+/zSzeU/nDv24I14Vwu083/SynwUzrIhyAAAAABJRU5ErkJggg=="/>
+            </defs>
+            <rect id="Next" y="18.000000" width="18.666666" height="10.000000"
+                  transform="rotate(-90 0.000000 18.000000)" fill="url(#pattern_40_5530)" fill-opacity="1.000000"/>
+          </svg>
+
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="maps" id="contacts">
+  <div class="container">
+    <iframe
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa833fab032149076154aa3718e6959ae1ab72c1c6d448c99c60ce697781070bf&amp;source=constructor"
+      width="607" height="438" frameborder="0"></iframe>
+    <div class="contacts">
+      <div class="contacts-title">Контакты</div>
+      <div class="contacts1-items">
+        <div class="contacts-item">
+          <div class="contact-title">Адрес</div>
+          <div class="contact-text">Главный офис компании АйтиШторм находится по адресу Пресненская наб., 12, Москва,
+            Россия, 123317.
+          </div>
+        </div>
+        <div class="contacts-item">
+          <div class="contact-title">Телефон</div>
+          <div class="contact-text">+7 (499) 343-13-34</div>
+        </div>
+        <div class="contacts-item">
+          <div class="contact-title">Электронный адрес</div>
+          <div class="contact-text">info@itstorm.com</div>
+        </div>
+        <div class="contacts-item">
+          <div class="contact-title">Мы в социальных сетях</div>
+          <div class="contact-social">
+            <svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <clipPath id="clip14_131">
+                  <rect id="VK" width="30.000000" height="30.000000" fill="white" fill-opacity="0"/>
+                </clipPath>
+              </defs>
+              <rect id="VK" width="30.000000" height="30.000000" fill="#FFFFFF" fill-opacity="0"/>
+              <g clip-path="url(#clip14_131)">
+                <path id="Vector"
+                      d="M5.73 0.26C2.73 0.26 0.26 2.73 0.26 5.73L0.26 24.26C0.26 27.26 2.73 29.73 5.73 29.73L24.26 29.73C27.26 29.73 29.73 27.26 29.73 24.26L29.73 5.73C29.73 2.73 27.26 0.26 24.26 0.26L5.73 0.26ZM5.73 2.94L24.26 2.94C25.81 2.94 27.05 4.18 27.05 5.73L27.05 24.26C27.05 25.81 25.81 27.05 24.26 27.05L5.73 27.05C4.18 27.05 2.94 25.81 2.94 24.26L2.94 5.73C2.94 4.18 4.18 2.94 5.73 2.94ZM14.62 9.95C13.63 9.94 12.8 9.95 12.33 10.18C12.01 10.33 11.77 10.67 11.92 10.69C12.1 10.72 12.52 10.8 12.73 11.1C13.02 11.48 13.01 12.35 13.01 12.35C13.01 12.35 13.16 14.72 12.62 15.02C12.25 15.22 11.75 14.81 10.65 12.92C10.09 11.95 9.66 10.88 9.66 10.88C9.66 10.88 9.59 10.68 9.44 10.57C9.26 10.44 9.02 10.4 9.02 10.4L6.39 10.42C6.39 10.42 6 10.43 5.86 10.6C5.73 10.76 5.85 11.07 5.85 11.07C5.85 11.07 7.9 15.86 10.22 18.28C12.35 20.5 14.77 20.35 14.77 20.35L15.87 20.35C15.87 20.35 16.2 20.32 16.37 20.14C16.52 19.97 16.52 19.66 16.52 19.66C16.52 19.66 16.5 18.19 17.18 17.97C17.85 17.76 18.71 19.39 19.62 20.02C20.32 20.49 20.85 20.39 20.85 20.39L23.3 20.35C23.3 20.35 24.57 20.27 23.97 19.26C23.92 19.18 23.62 18.52 22.15 17.16C20.61 15.74 20.82 15.97 22.67 13.5C23.79 12 24.24 11.09 24.1 10.69C23.97 10.32 23.14 10.42 23.14 10.42L20.38 10.43C20.38 10.43 20.18 10.41 20.03 10.5C19.88 10.58 19.79 10.79 19.79 10.79C19.79 10.79 19.35 11.96 18.77 12.94C17.54 15.03 17.05 15.14 16.85 15.01C16.38 14.71 16.5 13.8 16.5 13.15C16.5 11.13 16.8 10.29 15.9 10.07C15.6 10 15.38 9.95 14.62 9.95Z"
+                      fill="#B9D5FD" fill-opacity="1.000000" fill-rule="nonzero"/>
+              </g>
+            </svg>
+
+            <svg width="30.000000" height="30.000000" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs/>
+              <path id="Vector"
+                    d="M14.99 -1C6.72 -1 -0.01 5.73 -0.01 14C-0.01 22.27 6.72 29 14.99 29C23.26 29 29.99 22.27 29.99 14C29.99 5.73 23.26 -1 14.99 -1ZM14.99 1.5C21.91 1.5 27.49 7.08 27.49 14C27.49 20.28 22.88 25.45 16.85 26.34L16.85 17.64L20.41 17.64L20.97 14.02L16.85 14.02L16.85 12.05C16.85 10.55 17.35 9.22 18.75 9.22L21.01 9.22L21.01 6.06C20.61 6.01 19.77 5.89 18.19 5.89C14.88 5.89 12.94 7.64 12.94 11.62L12.94 14.02L9.54 14.02L9.54 17.64L12.94 17.64L12.94 26.31C7.01 25.33 2.49 20.21 2.49 14C2.49 7.08 8.08 1.5 14.99 1.5Z"
+                    fill="#B9D5FD" fill-opacity="1.000000" fill-rule="nonzero"/>
+            </svg>
+            <svg width="29.000000" height="29.000000" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs/>
+              <path id="Vector"
+                    d="M7.93 -0.74C3.17 -0.74 -0.74 3.17 -0.74 7.93L-0.74 20.06C-0.74 24.82 3.17 28.73 7.93 28.73L20.06 28.73C24.82 28.73 28.73 24.82 28.73 20.06L28.73 7.93C28.73 3.17 24.82 -0.74 20.06 -0.74L7.93 -0.74ZM7.93 1.94L20.06 1.94C23.38 1.94 26.05 4.61 26.05 7.93L26.05 20.06C26.05 23.37 23.38 26.05 20.06 26.05L7.93 26.05C4.62 26.05 1.94 23.37 1.94 20.06L1.94 7.93C1.94 4.61 4.62 1.94 7.93 1.94ZM21.91 4.87C21.23 4.87 20.69 5.41 20.69 6.08C20.69 6.76 21.23 7.3 21.91 7.3C22.58 7.3 23.12 6.76 23.12 6.08C23.12 5.41 22.58 4.87 21.91 4.87ZM14 5.96C9.57 5.96 5.96 9.57 5.96 13.99C5.96 18.42 9.57 22.03 14 22.03C18.42 22.03 22.03 18.42 22.03 13.99C22.03 9.57 18.42 5.96 14 5.96ZM14 8.64C16.97 8.64 19.35 11.02 19.35 13.99C19.35 16.97 16.97 19.35 14 19.35C11.02 19.35 8.64 16.97 8.64 13.99C8.64 11.02 11.02 8.64 14 8.64Z"
+                    fill="#B9D5FD" fill-opacity="1.000000" fill-rule="nonzero"/>
+            </svg>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<ng-template #popup>
+  <div class="order-popup">
+    <div class="order-popup-close" (click)="closePopup()">
+      <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <clipPath id="clip60_729">
+            <rect id="Х" width="16.000000" height="16.000000" fill="white" fill-opacity="0"/>
+          </clipPath>
+        </defs>
+        <g clip-path="url(#clip60_729)">
+          <rect id="Х" width="14.000000" height="14.000000" transform="translate(1.000000 2.000000)" fill="#FFFFFF"
+                fill-opacity="0"/>
+          <path id="Line 4" d="M1.58 2.29L14.3 15.02" stroke="#BEBEBE" stroke-opacity="1.000000" stroke-width="1.000000"
+                stroke-linecap="round"/>
+          <path id="Line 5" d="M14.27 2.27L1.54 15" stroke="#BEBEBE" stroke-opacity="1.000000" stroke-width="1.000000"
+                stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <div class="order-popup-title">Спасибо за вашу заявку!</div>
+    <div class="order-popup-content">Мы свяжемся с вами при первой же возможности..</div>
+    <button class="button" (click)="closePopup()">Окей</button>
+  </div>
+</ng-template>
+<ng-template #popupOrder>
+  <div class="order-popup">
+    <div class="order-popup-close" (click)="closePopupOrder()">
+      <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <clipPath id="clip60_729">
+            <rect id="Х" width="16.000000" height="16.000000" fill="white" fill-opacity="0"/>
+          </clipPath>
+        </defs>
+        <g clip-path="url(#clip60_729)">
+          <rect id="Х" width="14.000000" height="14.000000" transform="translate(1.000000 2.000000)" fill="#FFFFFF"
+                fill-opacity="0"/>
+          <path id="Line 4" d="M1.58 2.29L14.3 15.02" stroke="#BEBEBE" stroke-opacity="1.000000" stroke-width="1.000000"
+                stroke-linecap="round"/>
+          <path id="Line 5" d="M14.27 2.27L1.54 15" stroke="#BEBEBE" stroke-opacity="1.000000" stroke-width="1.000000"
+                stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <!--    <mat-label>Выберите услугу</mat-label>-->
+    <div class="order-popup-title">Заявка на услугу</div>
+    <div class="data-form" [formGroup]="orderForm">
+      <div class="service">{{selected}}
+        <mat-form-field class="mat-form-field">
+          <mat-select [formControlName]="'service'" [(value)]="selected">
+            <mat-option *ngFor="let category of categories" [value]="category.name">{{category.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--      <p>You selected: {{selected}}</p>-->
+      <!--      <input type="text" placeholder="Service"
+                   [ngStyle]="{'border-color': orderForm.get('service')?.invalid
+                         && (orderForm.get('service')?.dirty || orderForm.get('service')?.touched) ? 'red' : ''}"
+                   formControlName="service">-->
+
+      <input type="text" placeholder="Ваше имя"
+             [ngStyle]="{'border-color': orderForm.get('name')?.invalid
+                   && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched) ? 'red' : ''}"
+             formControlName="name">
+      <input type="text" placeholder="Ваш номер телефона"
+             [ngStyle]="{'border-color': orderForm.get('phone')?.invalid
+                   && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched) ? 'red' : ''}"
+             formControlName="phone">
+      <button class="button" (click)="createOrder()">Оставить заявку</button>
+    </div>
+  </div>
+
+</ng-template>

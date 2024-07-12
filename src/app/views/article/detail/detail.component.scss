@@ -1,0 +1,33 @@
+@import "../../../../assets/styles/variables";
+
+.article {
+  padding-top: 80px;
+  padding-bottom: 10px;
+
+  .container {
+    position: relative;
+
+    .article-blocks {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      article-block-left {
+        .article-content {
+        }
+
+
+      }
+
+      .related-card-items {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 60px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+

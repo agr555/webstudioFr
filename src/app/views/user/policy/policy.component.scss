@@ -1,0 +1,41 @@
+@import "../../../../assets/styles/variables";
+
+.policy {
+  .container {
+    * {
+      color: $dark-blue-text-color;
+      font-size: 16px;
+      line-height: 130%;
+    }
+
+    h1 {
+      font-family: Lora, sans-serif;
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      font-family: Montserrat, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 130%;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    nav {
+      ul {
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+
+}

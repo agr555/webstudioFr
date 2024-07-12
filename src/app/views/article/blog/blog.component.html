@@ -1,0 +1,104 @@
+<section class="blog">
+  <div class="container">
+    <div class="blog-title">Блог</div>
+    <div class="blog-body">
+      <div class="blog-head">
+        <div class="blog-applied-filters">
+          <div class="blog-applied-filter" *ngFor="let appliedFilter of appliedFilters">
+            <span>{{appliedFilter.name}}</span>
+            <a (click)="removeAppliedFilter(appliedFilter)">
+              <svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none"
+                   xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g clip-path="url(#clip10_346)">
+                  <rect id="Х" width="14.000000" height="14.000000" transform="translate(1.000000 1.500000)"
+                        fill="#FFFFFF" fill-opacity="0"/>
+                  <path id="Line 4" d="M1.22 2.14L13.95 14.87" stroke="#A8ABA7" stroke-opacity="1.000000"
+                        stroke-width="1.000000" stroke-linecap="round"/>
+                  <path id="Line 5" d="M13.92 1.42L1.19 14.15" stroke="#A8ABA7" stroke-opacity="1.000000"
+                        stroke-width="1.000000" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="blog-filter" [class.open]="filteringOpen">
+          <div class="blog-filter-head" (click)="toggleFiltering()">
+            <span>Фильтр</span>
+            <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.00002 7.50003C7.41668 7.50003 6.83335 7.27503 6.39168 6.83337L0.95835 1.40003C0.716683 1.15837 0.716683 0.758366 0.95835 0.516699C1.20002 0.275033 1.60002 0.275033 1.84168 0.516699L7.27502 5.95003C7.67502 6.35003 8.32502 6.35003 8.72502 5.95003L14.1583 0.516699C14.4 0.275033 14.8 0.275033 15.0417 0.516699C15.2833 0.758366 15.2833 1.15837 15.0417 1.40003L9.60835 6.83337C9.16668 7.27503 8.58335 7.50003 8.00002 7.50003Z"
+                fill="#071739"/>
+            </svg>
+          </div>
+          <div class="blog-filters-body">
+            <category-filter [category]="category" [index]="i"
+                             *ngFor="let category of categories; let i = index;"></category-filter>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="data-form" [formGroup]="orderForm">
+         &lt;!&ndash;    <div class="service" [ngModel]="selected" (ngModelChange)="setUppercaseName($event)">{{selected}}&ndash;&gt;
+         <div class="service">{{selected}}
+           <mat-form-field class="mat-form-field">
+             <mat-select [formControlName]="'service'" [(value)]="selected" multiple>
+               <mat-option *ngFor="let category of categories" [value]="category.name">
+                 <div class="opt">
+                   {{category.name}}
+                   <div class="filter-category-minus">-</div>
+                   &lt;!&ndash;                        <div class="filter-category-plus">+</div>&ndash;&gt;
+                 </div>
+               </mat-option>
+
+             </mat-select>
+           </mat-form-field>
+         </div>
+       </div>-->
+      <div class="blog-card-items">
+        <article-card *ngFor="let article of articles?.items" [article]="article"></article-card>
+      </div>
+    </div>
+  </div>
+
+
+  <!--pagination-->
+  <div class="pagination" *ngIf="pages.length >1">
+    <div class="pagination-arrow" (click)="openPrevPage()"
+         [class.disabled]="activeParams.page ? activeParams.page ===1 : true">
+      <svg width="10.000000" height="19.000000" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <pattern id="pattern_17_40" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+            <use xlink:href="#image17_4_0" transform="matrix(0.002841,0,0,0.005303,0,-0.009091)"/>
+          </pattern>
+          <image id="image17_4_0" width="352.000000" height="192.000000"
+                 xlink:href="data:image/png;base64,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"/>
+        </defs>
+        <rect id="Previous" x="10.000000" width="18.666666" height="10.000000" transform="rotate(90 10.000000 0.000000)"
+              fill="url(#pattern_17_40)" fill-opacity="1.000000"/>
+      </svg>
+    </div>
+
+    <div class="pagination-pages">
+      <a class="pagination-page" (click)="openPage(page)"
+         [class.active]="this.activeParams.page ? this.activeParams.page === page : (page === 1)"
+         *ngFor="let page of pages">{{page}}</a>
+    </div>
+
+    <div class="pagination-arrow" (click)="openNextPage()"
+         [class.disabled]="activeParams.page ? activeParams.page === pages.length : false">
+      <svg width="10.000000" height="18.000000" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+           xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <pattern id="pattern_17_160" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+            <use xlink:href="#image17_16_0" transform="matrix(0.002841,0,0,0.005303,0,-0.009091)"/>
+          </pattern>
+          <image id="image17_16_0" width="352.000000" height="192.000000"
+                 xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWAAAADACAYAAAA6CrkWAAAABHNCSVQICAgIfAhkiAAACsVJREFUeJzt3c1vXNUZx/HfORZ5K5FQujAIdVEJKtWOCY1UtYJNrZLguCyqSl3xT3SVZd9YNV2U/6Evq6pS1KpxEyBdVN1UgkBjhwWBRYWIF41oFUIxzD1dxOP4ZcZz584979/PBhLIzJ1zn+er6MZgo5Yuv+tOHv9i8JIz5juS+7qTmTfSk5LkpA+N3KZkbsm460fc3J+WF829tq8NACnz1T8z6V+4uuGebprmojF6WdLxltf7qYx+45y9tLJo3mv5awAgKb77NzbA1z9wx7buNz+X9CNJj7S/5D22nNOrR79kf7L8VfO/jq8BAEGF6t/IAK+tu6eMmj9IWur4xvvf5Z3BwP5gdcnc7uX1AMCTkP07EOC1m+6MMc1fJM338uYPbVrZC+cWzVs9vy4A9OLauvtGo+aKPPTPOfviymnz9u6f3BPg7fL/zcObD911xp5bWTBvenp9AOhkbcOdNa65JumUp7fYnBvY5154xrw//Ak7/JvrH7hjRs3v5S++knTKuOb1KzfdNz2+BwBM5eq6e9a45qr8xVeS5gdzzeW//8vt/GHeToC37jevSDrj8c2HHrOmWVvbcGcDvBcAHGptw511al6X9OUAb3f6v/9pfjr8gZGk1265rw2a5qa6/2lfFzyOABBVgMcOo2wNGruwumRuW0kaNM1FhY2vxOMIABEFeuwwypE521yUJHP5XXfy2KC5I+lE4IsY+rhx9vyF0+Yfkd4fQGWurrtnnZrXFOaxwyj3j8jO2+NfDF5SvPhKPBMGEFDgZ77jnPhMg1X74L9tju6Ucc01IgzAp0jPfEeyMsvWyS3EvpBtPBMG4E3EZ74jObkFa2SeiH0huzxmTXOVCAPoUwLPfA9wMo9bSY/HvpB9iDCA3qQYX0ky0hNWkot9ISMQYQAzSzW+25yV9FHsqxiDCAPoLPH4StJHVnJ3Yl/FIYgwgKllEF9J7o6VzEbsy5iArxMG0FoiX+c7kZG5ZWXcX2NfSAt8nTCAiVL6Ot/J3BtWn8/9UdInsS+lBb5OGMBYqX2d7wT3H9HcFfviGfOJjH4X+2pa4pkwgAPyeOa7x6+XF809K0nO2UuStiJfUFs8EwawI5dnvrtszQ3sJWn7f8i+smjec06vxr2mqfBMGEBmz3wfMEa/Gn5bop3viNEctT92Uk7fMJNnwkDFMnvmO/TPR0/anw1/sBPg1afNZ01jfyhpM8pldcPjCKBCGT52kKQ7cwP7/ee+Yj4d/oTd/U9Xl8xtI7si6W7wS+uOxxFARXJ87CDprpG9sPs7Ikv7AixJ5xfNDSP7XUn/DnZps+NxBFCBTB87fNw4u3J+0dzY/w/MuF+R4Zd1SHx7I6BYJTZpbIClMj8wgPyU2qJDAyyV+8EB5KHkBk0MsFT2AQBIV+ntaRVgqfyDAJCWGprTOsBSHQcCIL5aWjNVgKV6DgZAHDU1ZuoAS3UdEIBwamtLpwBL9R0UAL9qbErnAEt1HhiA/tXakpkCLNV7cAD6UXNDZg6wVPcBAuiu9nb0EmCJgwQwHZrRY4AlDhRAO7TigV4DLHGwAA5HIx7qPcASBwxgNNqwl5cASxw0gL1owkHeAixx4AAeoAWjeQ2wxMEDtaMB43kPsMQNAGrF7h8uSIAlbgRQG3Z+smABlrghQC3Y9XaCBljixgClY8fbCx5giRsElIrdnk6UAEvcKKA07PT0ogVY4oYBpWCXu4kaYIkbB+SOHe4ueoAlbiCQK3Z3NkkEWOJGArlhZ2eXTIAlbiiQC3a1H0kFWOLGAqljR/uTXIAlbjCQKnazX0kGWOJGA6lhJ/uXbIAlbjiQCnbRj6QDLHHjgdjYQX+SD7DEAACxsHt+ZRFgiUEAQmPn/MsmwBIDAYTCroWRVYAlBgPwjR0LJ7sASwwI4Au7FVaWAZYYFKBv7FR42QZYYmCAvrBLcWQdYInBAWbFDsWTfYAlBgjoit2Jq4gASwwSMC12Jr5iAiwxUEBb7EoaigqwxGABk7Aj6SguwBIDBozDbqSlyABLDBqwHzuRnmIDLDFwwBC7kKaiAywxeAA7kK7iAywxgKgXs5+2KgIsMYioDzOfvmoCLDGQqAeznoeqAiwxmCgfM56P6gIsMaAoF7OdlyoDLDGoKA8znZ9qAywxsCgHs5ynqgMsMbjIHzOcr+oDLDHAyBezmzcCvI1BRm6Y2fwR4F0YaOSCWS0DAd6HwUbqmNFyEOARGHCkitksCwEeg0FHapjJ8hDgQzDwSAWzWCYCPAGDj9iYwXIR4BZYAMTC7JWNALfEIiA0Zq58BHgKLARCYdbqQICnxGLAN2asHgS4AxYEvjBbdSHAHbEo6BszVR8CPAMWBn1hlupEgGfE4mBWzFC9CHAPWCB0xezUjQD3hEXCtJgZEOAesVBoi1mBRIB7x2JhEmYEQwTYAxYM4zAb2I0Ae8KiYT9mAvsRYI9YOAwxCxiFAHvG4oEZwDgEOAAWsF7cexyGAAfCItaHe45JCHBALGQ9uNdogwAHxmKWj3uMtghwBCxoubi3mAYBjoRFLQ/3FNMiwBGxsOXgXqILAhwZi5s/7iG6IsAJYIHzxb3DLAhwIljk/HDPMCsCnBAWOh/cK/SBACeGxU4f9wh9IcAJYsHTxb1Bnwhwolj09HBP0DcCnDAWPh3cC/hAgBPH4sfHPYAvBDgDBCAezh4+EeBMEILwOHP4RoAzQhDC4awRAgHODGHwjzNGKAQ4QwTCH84WIRHgTBGK/nGmCI0AZ4xg9IezRAwEOHOEY3acIWIhwAUgIN1xdoiJABeCkEyPM0NsBLggBKU9zgopIMCFISyTcUZIBQEuEIEZj7NBSghwoQjNQZwJUkOAC0ZwHuIskCICXDjCwxkgXQS4AjUHqObPjvQR4ErUGKIaPzPyQoArUlOQavqsyBcBrkwNYarhM6IMBLhCJQeq5M+G8hDgSpUYqhI/E8pGgCtWUrBK+iyoBwGuXAnhKuEzoE4EGFkHbM7o81yvnfiCAEOStLbhzhrXXJN0Kva1TOHu9l+zumZn7LmVBfNm7AtBfAQYOzL9nXBO+J0v9iDA2IMIe0N8cQABxgFEuHfEFyMRYIxEhHtDfDEWAcZYRHhmxBeHIsA4FBHujPhiIgKMiYjw1IgvWiHAaIUIt0Z80RoBRmtEeCLii6kQYEyFCI9FfDE1AoypEeEDiC86IcDohAjvIL7ojACjMyJMfDEbAoyZVBxh4ouZEWDMrMIIE1/0ggCjFxVFmPiiNwQYvakgwsQXvSLA6FXBESa+6B0BRu8KjDDxhRcEGF4UFGHiC28IMLwpIMLEF14RYHiVcYSJL7wjwPAuwwgTXwRBgBFERhEmvgiGACOYDCJMfBEUAUZQCUeY+CI4AozgEoww8UUUBBhRJBRh4otoCDCiSSDCxBdREWBEFTHCxBfREWBEFyHCxBdJIMBIQsAIE18kgwAjGQEiTHyRFBv7AoCh84vmhpU9J2nTw8vfMbLLxBcpIcBIyrlF89agsc/L6J0eX/btuYF9/vyiudHjawIzI8BIzuqSuX3kuP2WpF9K2prhpbac06UjJ+y3X3jGvN/T5QG94Rkwkra27p4yprkop5clnWj5y+7L6LeDgf3F6pK57fP6gFkQYGTh+rp7dMsMvidnliW34GTmjfSkJDnpQyO3KZkNJ/fGUc39eXnR3It9zcAk/wd38hpumNINzAAAAABJRU5ErkJggg=="/>
+        </defs>
+        <rect id="Next" y="18.000000" width="18.666666" height="10.000000" transform="rotate(-90 0.000000 18.000000)"
+              fill="url(#pattern_17_160)" fill-opacity="1.000000"/>
+      </svg>
+    </div>
+  </div>
+</section>

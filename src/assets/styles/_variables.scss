@@ -1,0 +1,11 @@
+$container-width: 1240px;
+$blue-text-color: #709FDCFF;
+$dark-blue-text-color: rgb(7, 23, 57);
+$grey-placeholder-color: rgb(168, 171, 167);
+
+@mixin head-lora-38{
+  font-family: Lora, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+}

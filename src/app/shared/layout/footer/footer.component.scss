@@ -1,0 +1,105 @@
+@import "../../../../assets/styles/variables";
+
+.footer {
+  background: rgb(185, 213, 253);
+  padding: 39px 0 57px;
+
+  .container {
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      margin-bottom: 38px;
+
+      .layout-menu {
+        margin-left: 20px;
+
+        nav ul {
+          li {
+            margin-left: 20px;
+
+            &.active {
+              color: $blue-text-color;
+              //border-bottom: 1px solid saddlebrown;
+              a {
+                color: $blue-text-color;
+              }
+            }
+
+            a {
+              text-decoration: none;
+              color: $dark-blue-text-color;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-center {
+      display: flex;
+      align-items: baseline;
+
+      .footer-block {
+        margin-right: 60px;
+        display: flex;
+        flex-direction: column;
+
+
+        .footer-title {
+          color: $blue-text-color;
+          font-family: Montserrat, sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        .footer-text {
+          color: $dark-blue-text-color;
+          font-size: 16px;
+          line-height: 130%;
+          max-width: 253px;
+          text-decoration: none;
+
+          &.footer-mail {
+            font-size: 14px;
+          }
+        }
+
+        .button {
+          width: 153px;
+          margin-top: 7px;
+          margin-bottom: 1px;
+          padding: 10px 20px;
+          font-size: 12px;
+          font-weight: 500;
+
+          a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-family: Montserrat, sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+
+        .footer-social {
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 12px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      color: $blue-text-color;
+      font-size: 16px;
+    }
+  }
+}
+
+
