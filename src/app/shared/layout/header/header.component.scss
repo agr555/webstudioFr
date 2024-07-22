@@ -1,4 +1,19 @@
 @import "../../../../assets/styles/variables";
+ //https://jonsuh.com/hamburgers/#sass
+// $hamburger-active-layer-color  : #709fdc !default;
+// $hamburger-active-hover-opacity: rgb(134, 175, 229) !default;
+// $hamburger-padding-x: 20px;
+// $hamburger-padding-y: 15px;
+// $hamburger-padding-x           : 15px !default;
+// $hamburger-padding-y           : 15px !default;
+// $hamburger-layer-width         : 40px !default;
+// $hamburger-layer-height        : 4px !default;
+// $hamburger-layer-spacing       : 6px !default;
+// $hamburger-layer-color         : #000 !default;
+// $hamburger-layer-border-radius : 4px !default;
+// $hamburger-hover-opacity       : 0.7 !default;
+// $hamburger-types     : (collapse);
+// @import "../../../../assets/styles/hamburgers.min.css";
 
 .header {
   padding: 40px 0;
@@ -16,6 +31,60 @@
       }
     }
 */
+    /*  //from pfl
+        .menu ul {
+          position: relative;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          color: red;
+          font-family: Lato, sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          gap: 10px;
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+
+
+          li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            box-shadow: 0px 4px 20px 0px rgba(102, 102, 102, 0.15);
+            padding: 10px;
+            width: 125px;
+            border-radius: 10px;
+
+            a {
+              cursor: pointer;
+              text-decoration: none;
+              color: red;
+            }
+            &.active {
+              border-bottom-color: orange;
+              color: orange;
+            }
+            &:hover {
+              box-shadow: 0px 4px 20px 0px rgba(102, 102, 102, 0.84);
+              border-radius: 10px;
+            }
+          }
+        }*/
+
+    .small-menu {
+      display: none;
+
+      &.open {
+        display: block
+      }
+    }
+
+    .close {
+      display: none;
+    }
+
     .header-content {
       display: flex;
       align-items: center;
@@ -47,6 +116,7 @@
               a {
                 text-decoration: none;
                 color: $dark-blue-text-color;
+                color: $blue-text-color;
               }
 
               &.active {
@@ -93,6 +163,101 @@
             .header-actions-text {
               margin-left: 7px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /*375*/
+  .header {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .small-menu {
+        display: flex;
+        justify-items: flex-end;
+        justify-content: space-between;
+        //margin-left: 24px;
+
+        svg {
+          width: 50px;
+          //height: 22px;
+          //fill: rgb(130, 19, 40);
+        }
+      }
+
+      .menu {
+        display: none;
+        position: fixed;
+        width: 100%;
+        //height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        background: rgba(14, 10, 10, 0.62);
+        z-index: 2;
+        padding: 30px;
+        justify-content: center;
+        text-align: center;
+
+        ul {
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 0 auto;
+          gap: 20px;
+
+          li {
+            //margin-right: 50px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            //margin: 0 auto;
+            margin: 10px 0;
+            justify-content: flex-start;
+            width: 200px;
+
+            a {
+              color: white;
+              font-size: 32px;
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      .menu.open {
+        display: flex;
+        align-items: center;
+      }
+
+      .menu .close {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: #709fdc;
+
+        position: absolute;
+        top: 20px;
+        //left: 20px;
+        right: 20px;
+      }
+
+      .header-content {
+        .header-left {
+          .logo {
+            display: none;
+          }
+        }
+
+        .header-right {
+          .header-phone {
+            display: none;
           }
         }
       }

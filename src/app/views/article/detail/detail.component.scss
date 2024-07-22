@@ -3,21 +3,20 @@
 .article {
   padding-top: 80px;
   padding-bottom: 10px;
+  // display: flex;
+  // justify-content: center;
 
   .container {
     position: relative;
+      display: flex;
+  justify-content: center;
 
     .article-blocks {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
 
-      article-block-left {
-        .article-content {
-        }
-
-
-      }
+   
 
       .related-card-items {
         display: flex;
@@ -29,5 +28,8 @@
     }
   }
 }
+@media only screen and (max-width: 1400px) {
+  
 
+}
 

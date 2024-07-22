@@ -1,18 +1,18 @@
-import {Component, ElementRef, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import {OwlOptions} from 'ngx-owl-carousel-o';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {Router} from '@angular/router';
-import {FormBuilder, Validators} from '@angular/forms';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {HttpErrorResponse} from '@angular/common/http';
-import {OrderType} from '../../../types/order.type';
-import {OrderService} from '../../shared/services/order.service';
-import {ArticleService} from '../../shared/services/article.service';
-import {PopArticleType} from '../../../types/pop-article.type';
-import {DefaultResponseType} from '../../../types/default-response.type';
-import {CategoryType} from '../../../types/category.type';
-import {CategoryService} from '../../shared/services/category.service';
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpErrorResponse } from '@angular/common/http';
+import { OrderType } from '../../../types/order.type';
+import { OrderService } from '../../shared/services/order.service';
+import { ArticleService } from '../../shared/services/article.service';
+import { PopArticleType } from '../../../types/pop-article.type';
+import { DefaultResponseType } from '../../../types/default-response.type';
+import { CategoryType } from '../../../types/category.type';
+import { CategoryService } from '../../shared/services/category.service';
 
 @Component({
   selector: 'app-main',
@@ -36,24 +36,78 @@ export class MainComponent implements OnInit {
   dialogRefOrder: MatDialogRef<any> | null = null;
 
   formGroup: CategoryType[] = [];
-
-  customOptions: OwlOptions = {
+  customOptionsMain: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    margin: 24,
+    autoHeight: false,
+    autoplay: true,
+    // center: true,
+    // margin: 24,
     navText: ['', ''],
     responsive: {
       0: {
         items: 1,
       },
-      900: {
+
+      1200: {
+        items: 1,
+      },
+
+    },
+    nav: false,
+  };
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    // center: true,
+    // margin: 24,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      700: {
+        items: 2,
+      },
+      1050: {
         items: 3,
       },
-      1240: {
+      1200: {
+        items: 4,
+      },
+
+    },
+    nav: false,
+  };
+  customOptionsServices: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 700,
+    // center: true,
+    // margin: 24,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      700: {
+        items: 2,
+      },
+      1050: {
+        items: 3,
+      },
+      1200: {
         items: 4,
       },
     },
@@ -172,7 +226,7 @@ export class MainComponent implements OnInit {
   more(serviceName: string) {
     this.selected = serviceName;
     // this.orderForm.value.service = serviceName;
-    this.orderForm.patchValue({service: serviceName});
+    this.orderForm.patchValue({ service: serviceName });
     this.dialogRefOrder = this.dialog.open(this.popupOrder);
     this.dialogRefOrder.backdropClick()
       .subscribe(() => {
@@ -197,7 +251,7 @@ export class MainComponent implements OnInit {
       this.orderService.createOrder(paramObject)
         .subscribe({
           next: (data: OrderType | DefaultResponseType) => {
-            if ((data as DefaultResponseType).error ) {
+            if ((data as DefaultResponseType).error) {
               throw new Error((data as DefaultResponseType).message);
             }
             // console.log(this.orderForm.value);
@@ -249,4 +303,5 @@ export class MainComponent implements OnInit {
     this.orderForm.markAsPristine();// чистая
     this.orderForm.reset(); // will reset to null
   }
+
 }

@@ -74,6 +74,9 @@
             "production": {
               "browserTarget": "websstudio:build:production"
             },
+            "options": {
+        "poll": 2000
+      },
             "development": {
               "browserTarget": "websstudio:build:development"
             }
@@ -101,7 +104,7 @@
             "styles": [
               "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/hamburgers/dist/hamburgers.min.css",
               "src/assets/styles/styles.scss"
             ],
             "scripts": []
@@ -125,6 +128,7 @@
     ],
     "cache": {
       "enabled": false
-    }
+    },
+    "analytics": false
   }
 }

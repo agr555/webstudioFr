@@ -1,12 +1,15 @@
 @import "../../../../assets/styles/auth-form";
+
 .login {
   padding-top: 105px;
   padding-bottom: 91px;
+
   .container {
     display: flex;
 
-    .auth-form{
-    margin-top: 10px;
+    .auth-form {
+      margin-top: 10px;
+
 
       .auth-button {
 
@@ -22,6 +25,47 @@
 
       img {
         vertical-align: top;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .login {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .container {
+      flex-direction: column;
+
+      .auth-form {
+        text-align: center;
+      }
+
+      .auth-checkbox {
+        margin: 0 auto;
+        label{
+          text-align: left;
+        }
+      }
+
+      // .auth-form{
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   flex-direction: column;
+      // }
+      .page-image {
+        margin: 20px auto;
+
+
+        img {
+          margin-top: 30px;
+          background-size: contain;
+          min-width: -webkit-fill-available;
+          margin: 0 auto;
+          width: 100%;
+        }
       }
     }
   }

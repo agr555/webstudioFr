@@ -12,7 +12,7 @@ import {LoginResponseType} from "../../../../types/login-response.type";
 export class HeaderComponent implements OnInit {
   isLogged: boolean = false;
   userName: string | null = '';
-
+  smallMenuOpen = false;
   @Input() name: string = '';
 
   constructor(
@@ -72,4 +72,16 @@ private authService: AuthService,
           });
       }
     }
+  toggleSmallMenuOpen() {
+    this.smallMenuOpen = !this.smallMenuOpen;
+  }
+  smallMenuClose() {
+    this.smallMenuOpen = false;
+  }
+ //https://jonsuh.com/hamburgers/#sass
+  classFlag: boolean = false;
+  
+  menuToggle(event: any) {
+   this.classFlag = !this.classFlag ;
+}
 }

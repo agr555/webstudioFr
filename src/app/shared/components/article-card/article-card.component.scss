@@ -5,15 +5,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 292px;
+  max-width: 292px;
   height: 571px;
   box-sizing: border-box;
+  
 
 
   .article-info {
 
     .articles-image {
-      width: 291px;
+      max-width: 291px;
       height: 291px;
       border-radius: 5px;
       background: rgb(234, 234, 234);
