@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:3000/api/',
-  serverStaticPath: 'http://localhost:3000/public/images/',
-  /*api: 'https://webstudio-v.vercel.app/api/',
+  // api: 'http://localhost:3000/api/',
+  // serverStaticPath: 'http://localhost:3000/public/images/',
+  api: 'https://webstudio-v.vercel.app/api/',
   serverStaticPath: 'https://webstudio-v.vercel.app/images/',
-  */
+  
 };
 
 /*
